@@ -1,4 +1,6 @@
 ### functions to calculate age in years, months, or days
+library(eeptools)
+library(lubridate)
 
 age_y <- function(dob, age.day = today(), units = "years", floor = F) {
   calc.age = interval(dob, age.day) / duration(num = 1, units = units)
