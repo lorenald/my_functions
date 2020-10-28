@@ -14,6 +14,12 @@ age_m <- function(dob, age.day = today(), units = "months", floor = F) {
   return(calc.age)
 }
 
+age_w <- function(dob, age.day = today(), units = "weeks", floor = F) {
+  calc.age = interval(dob, age.day) / duration(num = 1, units = units)
+  if (floor) return(as.integer(floor(calc.age)))
+  return(calc.age)
+}
+
 age_d <- function(dob, age.day = today(), units = "days", floor = F) {
   calc.age = interval(dob, age.day) / duration(num = 1, units = units)
   if (floor) return(as.integer(floor(calc.age)))
